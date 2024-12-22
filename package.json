@@ -32,11 +32,11 @@
     "clean": "rm -rf dist/*",
     "prepare": "npm run build",
     "check:client:tsc": "npx tsc --p client/tsconfig.json --noEmit",
-    "build:server": "npx tsc --build server/tsconfig.json",
-    "build:client": "node ./scripts/build.js",
+    "build:server": "npx tsc --build tsconfig.json",
+    "build:client": "node ./scripts/build.mjs",
     "build:styles": "npx sass --no-source-map assets:dist/assets",
     "build": "npm-run-all -s clean check:client:tsc -p build:server build:client build:styles",
-    "lint:script": "npx eslint --ext .ts --ext .js .",
+    "lint:script": "eslint",
     "lint:styles": "stylelint 'assets/**/*.scss'",
     "test": "npm-run-all -p lint:script lint:styles"
   },
@@ -47,18 +47,17 @@
     "fr-FR": "./languages/fr.json"
   },
   "devDependencies": {
-    "@peertube/peertube-types": "^4.2.2",
-    "@tsconfig/node16": "^1.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
-    "esbuild": "^0.14.36",
-    "eslint": "^8.21.0",
-    "eslint-config-standard-with-typescript": "^22.0.0",
+    "@peertube/peertube-types": "^7.0.0",
+    "@tsconfig/node18": "^18.2.4",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
+    "esbuild": "^0.24.2",
+    "eslint": "^9.17.0",
+    "eslint-config-love": "^113.0.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.54.5",
-    "stylelint": "^14.11.0",
-    "stylelint-config-recommended-scss": "^7.0.0",
-    "stylelint-config-standard-scss": "^5.0.0",
-    "typescript": "^4.7.4"
+    "stylelint": "^16.12.0",
+    "typescript": "5.7",
+    "stylelint-config-standard-scss": "^14.0.0"
   }
 }

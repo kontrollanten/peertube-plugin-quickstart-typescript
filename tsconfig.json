@@ -1,7 +1,7 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-		"moduleResolution": "node", // Tell tsc to look in node_modules for modules
+		"moduleResolution": "node16", // Tell tsc to look in node_modules for modules
 		"strict": true, // That implies alwaysStrict, noImplicitAny, noImplicitThis
 
 		"alwaysStrict": true, // should already be true because of strict:true
@@ -14,11 +14,15 @@
 		"removeComments": true,
 		"sourceMap": true,
 
-		"outDir": "../dist/server/",
-		"paths": {}
+		"outDir": "./dist/",
+		"paths": {},
+		"allowJs": true
 	},
 	"include": [
-		"./**/*"
+		"./server/**/*",
+		"**/*.mjs"
 	],
-	"exclude": []
+	"exclude": [
+		"./client"
+	]
 }
