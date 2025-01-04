@@ -5,19 +5,11 @@ import love from 'eslint-config-love'
 
 export default tseslint.config(
     {
-        ignores: ["**/dist", "**/node_modules"],
+        ignores: ["**/dist", "**/node_modules", "**/*.mjs"],
     },
     love,
     ...tseslint.configs.recommended,
     {
-        languageOptions: {
-            parserOptions: {
-                projectService: {
-                    allowDefaultProject: ['scripts/build.js']
-                }
-            }
-        },
-
         rules: {
             "@typescript-eslint/no-unused-vars": [2, {
                 argsIgnorePattern: "^_",

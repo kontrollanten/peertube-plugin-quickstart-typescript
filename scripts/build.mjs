@@ -7,7 +7,7 @@ const clientFiles = [
 ]
 
 const configs = clientFiles.map(f => ({
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- Ignore
+   
   entryPoints: [ path.resolve(import.meta.dirname, '..', 'client', f+'.ts') ],
   bundle: true,
   minify: true,
@@ -16,7 +16,7 @@ const configs = clientFiles.map(f => ({
   sourcemap: false,
   format: 'esm',
   target: 'safari11',
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- Ignore
+   
   outfile: path.resolve(import.meta.dirname, '..', 'dist/client', f+'.js'),
 }))
 
